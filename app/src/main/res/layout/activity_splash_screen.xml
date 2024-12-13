@@ -13,16 +13,16 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher_background"/>
+        android:src="@drawable/logo"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="Her Passion, Her Code, Our Innovation"
+        android:text="@string/slogan"
         android:textStyle="bold"
         android:textSize="14sp"
-        android:textColor="@color/primaryBlack"/>
+        android:textColor="@color/primaryGreen"/>
 
 
 </LinearLayout>

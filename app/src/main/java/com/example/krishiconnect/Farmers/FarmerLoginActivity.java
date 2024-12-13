@@ -18,4 +18,5 @@ public class FarmerLoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_farmer_login);
 
+    }
 }

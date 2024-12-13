@@ -11,7 +11,9 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.krishiconnect.Customer.CustomerActivity;
 import com.example.krishiconnect.Customer.CustomerLoginActivity;
+import com.example.krishiconnect.Farmers.FarmerActivity;
 import com.example.krishiconnect.Farmers.FarmerLoginActivity;
 import com.example.krishiconnect.Riders.RiderLoginActivity;
 
@@ -31,7 +33,7 @@ public class ChooseActivity extends AppCompatActivity {
         farmerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChooseActivity.this, FarmerLoginActivity.class);
+                Intent intent = new Intent(ChooseActivity.this, FarmerActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -40,7 +42,7 @@ public class ChooseActivity extends AppCompatActivity {
         customerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChooseActivity.this, CustomerLoginActivity.class);
+                Intent intent = new Intent(ChooseActivity.this, CustomerActivity.class);
                 startActivity(intent);
                 finish();
             }

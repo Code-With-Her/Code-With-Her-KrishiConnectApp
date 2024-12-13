@@ -19,16 +19,23 @@
         android:theme="@style/Theme.KrishiConnect"
         tools:targetApi="31">
         <activity
+            android:name=".Customer.CustomerRegisterActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Customer.ViewLocation"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".Customer.PaymentActivity"
             android:exported="false" />
         <activity
             android:name=".Customer.DetailedActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Farmers.FarmerActivity"
@@ -50,7 +57,13 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
-            android:exported="false"/>
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

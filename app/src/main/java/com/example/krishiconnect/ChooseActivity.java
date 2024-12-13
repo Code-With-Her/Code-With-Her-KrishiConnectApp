@@ -33,7 +33,7 @@ public class ChooseActivity extends AppCompatActivity {
         farmerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChooseActivity.this, FarmerActivity.class);
+                Intent intent = new Intent(ChooseActivity.this, FarmerLoginActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -42,7 +42,7 @@ public class ChooseActivity extends AppCompatActivity {
         customerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ChooseActivity.this, CustomerActivity.class);
+                Intent intent = new Intent(ChooseActivity.this, CustomerLoginActivity.class);
                 startActivity(intent);
                 finish();
             }

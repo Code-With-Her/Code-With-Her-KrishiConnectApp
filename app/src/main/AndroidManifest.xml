@@ -40,16 +40,16 @@
         <activity
             android:name=".Farmers.FarmerActivity"
             android:exported="true">
-
+        </activity>
+        <activity
+            android:name=".Customer.CustomerActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Customer.CustomerActivity"
-            android:exported="false" />
         <activity
             android:name=".Riders.RiderLoginActivity"
             android:exported="false" />

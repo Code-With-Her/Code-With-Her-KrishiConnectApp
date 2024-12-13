@@ -71,8 +71,8 @@ public class CustomerHomeFragment extends Fragment {
 
         // Initialize slider images with hardcoded resource IDs
         sliderImages = new ArrayList<>();
-        sliderImages.add(R.drawable.ic_launcher_foreground);
-        sliderImages.add(R.drawable.ic_launcher_background);
+        sliderImages.add(R.drawable.carrot);
+        sliderImages.add(R.drawable.broccoli);
         sliderImages.add(R.drawable.logo);
 
         // Set up the ViewPager2 adapter for the slider

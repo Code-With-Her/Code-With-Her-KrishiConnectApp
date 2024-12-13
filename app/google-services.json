@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "826021037599",
+    "firebase_url": "https://farwestern-university-default-rtdb.firebaseio.com",
+    "project_id": "farwestern-university",
+    "storage_bucket": "farwestern-university.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826021037599:android:44e367c7cb316a1b2a772a",
+        "android_client_info": {
+          "package_name": "com.example.dataupload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK1JMKNVIofUwV0ahbh3NFkGkdamd6FQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826021037599:android:3c96c3302152ff5e2a772a",
+        "android_client_info": {
+          "package_name": "com.example.krishiconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK1JMKNVIofUwV0ahbh3NFkGkdamd6FQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826021037599:android:faf4b8989298c3192a772a",
+        "android_client_info": {
+          "package_name": "com.jibu.adminapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK1JMKNVIofUwV0ahbh3NFkGkdamd6FQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826021037599:android:7e7b988ea99712102a772a",
+        "android_client_info": {
+          "package_name": "com.jibu.babybuy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCK1JMKNVIofUwV0ahbh3NFkGkdamd6FQI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826021037599-h21tb44jap55e5oh0onhd65qqae1eakp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

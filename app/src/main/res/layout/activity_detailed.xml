@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Back Button and Title -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/back_arrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Product Detail"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Product Image -->
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        />
+
+    <!-- Product Details -->
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:translationY="-50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="6dp"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Product Name and Rating -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DSLR Camera"
+                    android:layout_marginStart="6dp"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical" />
+
+                <RatingBar
+                    android:id="@+id/productRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:rating="3"
+                    android:layout_marginStart="100dp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+            <!-- Product Description -->
+            <TextView
+                android:id="@+id/productDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="6dp"
+                android:lineSpacingExtra="4dp" />
+
+            <!-- Product Price -->
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price: Rs. 30"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="6dp"
+                android:textStyle="bold" />
+
+            <!-- Quantity Selector -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/decreaseQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/red"/>
+
+                <TextView
+                    android:id="@+id/quantityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/increaseQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:layout_margin="4dp"
+                    android:backgroundTint="@color/miami"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Action Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addToCartButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:text="Add To Cart"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/pink" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buyNowButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginTop="18dp"
+            android:text="Buy Now"
+            android:backgroundTint="@color/skyBlue" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/placeOrder"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:layout_marginTop="18dp"
+            android:text="Place Order"
+            android:backgroundTint="@color/skyBlue" />
+    </LinearLayout>
+</LinearLayout>

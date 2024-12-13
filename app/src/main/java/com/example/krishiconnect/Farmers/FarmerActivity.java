@@ -14,6 +14,7 @@ import com.example.krishiconnect.Customer.CustomerFragment.CustomerHomeFragment;
 import com.example.krishiconnect.Customer.CustomerFragment.CustomerProfileFragment;
 import com.example.krishiconnect.Farmers.FarmerFragment.FarmerHomeFragment;
 import com.example.krishiconnect.Farmers.FarmerFragment.FarmerOrderFragment;
+import com.example.krishiconnect.Farmers.FarmerFragment.FarmerPostFragment;
 import com.example.krishiconnect.Farmers.FarmerFragment.FarmerProfileFragment;
 import com.example.krishiconnect.R;
 import com.example.krishiconnect.databinding.ActivityCustomerBinding;
@@ -35,7 +36,7 @@ public class FarmerActivity extends AppCompatActivity {
             if (item.getItemId() == R.id.home) {
                 selectedFragment = new FarmerHomeFragment();
             } else if (item.getItemId() == R.id.post) {
-                selectedFragment = new FarmerOrderFragment();
+                selectedFragment = new FarmerPostFragment();
             } else if (item.getItemId() == R.id.order) {
                 selectedFragment = new FarmerOrderFragment();
             } else if (item.getItemId() == R.id.profile) {

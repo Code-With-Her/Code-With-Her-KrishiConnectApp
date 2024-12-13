@@ -68,7 +68,7 @@ public class DetailedActivity extends AppCompatActivity {
 
         // Set data to views
         productName.setText(name);
-        productDescription.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...");
+        productDescription.setText("Ji");
         quantityText.setText(String.valueOf(quantity));
 
         // Parse price

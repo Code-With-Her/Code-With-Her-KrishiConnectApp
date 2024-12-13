@@ -3,12 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sementicColor"
     tools:context=".Farmers.FarmerFragment.FarmerPostFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/logo"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:hint="Product Name"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/btn_design"/>
+
+        <EditText
+            android:id="@+id/des"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/white"
+            android:hint="Product Description"
+            android:background="@drawable/btn_design"/>
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/white"
+            android:hint="Price"
+            android:background="@drawable/btn_design"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_margin="8dp"
+            android:text="Upload"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_design"/>
+
+
+    </LinearLayout>
 
 </FrameLayout>

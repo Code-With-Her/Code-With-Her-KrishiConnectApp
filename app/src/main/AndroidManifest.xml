@@ -13,6 +13,18 @@
         android:theme="@style/Theme.KrishiConnect"
         tools:targetApi="31">
         <activity
+            android:name=".Riders.RiderLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.CustomerLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Farmers.FarmerLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChooseActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>

@@ -2,4 +2,29 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    // Primary Colors
+
+    <color name="primaryGreen">#328416</color>
+    <color name="primaryBlue">#548bef</color>
+    <color name="primaryBlack">#1c1c1c</color>
+
+
+    //Secondary Colors
+
+    <color name="secondaryNavyGray">#526275</color>
+    <color name="secondaryWhite">#f5fff7</color>
+
+    <color name="sementicColor">#ecf2fe</color>
+
+
+    <color name="textColor">#3C478C</color>
+    <color name="bgColor">#0A5F0F</color>
+
+    <color name="pink">#de54ab</color>
+    <color name="skyBlue">#0bbbc0</color>
+    <color name="miami">#2cbca0</color>
+    <color name="red">#e05167</color>
+
 </resources>

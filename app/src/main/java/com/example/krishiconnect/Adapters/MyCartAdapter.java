@@ -14,15 +14,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.krishiconnect.Customer.CustomerFragment.CustomerCartFragment;
 import com.example.krishiconnect.Customer.PaymentActivity;
 import com.example.krishiconnect.Models.MyCartModel;
 import com.example.krishiconnect.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder> {
     private Context context;
     private List<MyCartModel> cartList;
+    DatabaseReference itemRef;
+    String productName;
 
     public MyCartAdapter(Context context, List<MyCartModel> cartList) {
         this.context = context;
@@ -48,7 +54,16 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         Glide.with(context).load(cartItem.getImageUrl()).into(holder.productImage);
 
         // Set onClickListener for itemView
-        holder.itemView.setOnClickListener(v -> showActionDialog(cartItem));
+        holder.itemView.setOnClickListener(v -> {
+            productName = cartList.get(position).getProductName();
+
+             itemRef = FirebaseDatabase.getInstance()
+                    .getReference("Cart")
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .child(productName);
+
+            showActionDialog(cartItem);
+        });
     }
 
     @Override
@@ -89,11 +104,13 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
         builder.setNegativeButton("Remove", (dialog, which) -> {
             // Remove the item from cart
-            if (context instanceof RemoveItemListener) {
-                ((RemoveItemListener) context).removeItem(cartItem);
-            } else {
-                Toast.makeText(context, "Failed to remove item. Listener not implemented.", Toast.LENGTH_SHORT).show();
-            }
+            itemRef.removeValue().addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(context, "Failed to remove item", Toast.LENGTH_SHORT).show();
+                }
+            });
         });
 
         builder.setNeutralButton("Cancel", (dialog, which) -> dialog.dismiss());

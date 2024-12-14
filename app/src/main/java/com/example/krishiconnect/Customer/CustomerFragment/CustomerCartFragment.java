@@ -69,7 +69,6 @@ public class CustomerCartFragment extends Fragment {
         // Subscribe to the "farmers" topic for notifications
         FirebaseMessaging.getInstance().subscribeToTopic("farmers");
 
-        // Fetch cart data from Firebase
         fetchCartData();
 
         return view;
@@ -114,60 +113,8 @@ public class CustomerCartFragment extends Fragment {
         });
     }
 
-    public void removeItem(MyCartModel cartItem) {
-        // Get the unique ID of the user
-        String userId = getUserId();
-        if (userId == null) {
-            Toast.makeText(getContext(), "Error: User not logged in!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Reference to the user's cart
-        DatabaseReference itemRef = FirebaseDatabase.getInstance().getReference("Cart")
-                .child(userId)
-                .child(cartItem.getItemId()); // Assuming `itemId` is the unique key for the item in the cart
-
-        // Remove the item from the database
-        itemRef.removeValue().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Toast.makeText(getContext(), "Item removed successfully", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getContext(), "Failed to remove item", Toast.LENGTH_SHORT).show();
-                Log.e("FirebaseError", "Failed to remove item: " + task.getException());
-            }
-        });
-    }
-
-    // Helper method to get the logged-in user's ID
-    private String getUserId() {
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        if (auth.getCurrentUser() != null) {
-            return auth.getCurrentUser().getUid();
-        }
-        return null;
-    }
 
 
-    /**
-     * Handles checkout functionality. Moves cart items to the orders database and notifies farmers.
-     */
-    private void checkout() {
-        String userId = firebaseAuth.getCurrentUser().getUid();
-        DatabaseReference ordersReference = FirebaseDatabase.getInstance().getReference("Orders");
-
-        for (MyCartModel item : cartList) {
-            DatabaseReference newOrderRef = ordersReference.push(); // Create a unique order ID
-            newOrderRef.setValue(item).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    notifyFarmer(item); // Notify the farmer about the order
-                    databaseReference.removeValue(); // Clear cart after checkout
-                    Toast.makeText(getContext(), "Order placed successfully!", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getContext(), "Failed to place order", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-    }
 
     /**
      * Sends a notification to the farmer about a new order.

@@ -62,9 +62,9 @@ public class PaymentActivity extends AppCompatActivity implements PaymentResultW
 
             options.put("name", "Jeewan Aidi");
             options.put("description", "Reference No. #123456");
-            options.put("image", "http://example.com/image/rzp.jpg");
+            options.put("image", "http://example.com/image/rz p.jpg");
 //            options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
-            options.put("theme.color", "#de54ab");
+            options.put("theme.color", "#81B950");
             options.put("currency", "INR");
             options.put("amount", "50000");//pass amount in cents
             options.put("prefill.email", "aidizeon@gmail.com");

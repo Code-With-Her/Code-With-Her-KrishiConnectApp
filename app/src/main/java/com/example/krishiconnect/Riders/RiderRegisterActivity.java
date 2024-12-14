@@ -207,10 +207,8 @@ public class RiderRegisterActivity extends AppCompatActivity {
 
         dRef.child(userID).setValue(riderMap).addOnSuccessListener(unused -> {
             Toast.makeText(RiderRegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(RiderRegisterActivity.this, RiderActivity.class));
             clearFields();
-            // Navigate to the next activity
-            Intent intent = new Intent(RiderRegisterActivity.this, RiderActivity.class);
-            startActivity(intent);
             finish();
         }).addOnFailureListener(e -> {
             Toast.makeText(RiderRegisterActivity.this, "Error saving data: " + e.getMessage(), Toast.LENGTH_SHORT).show();

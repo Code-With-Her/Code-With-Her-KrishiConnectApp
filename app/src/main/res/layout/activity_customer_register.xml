@@ -13,8 +13,8 @@
     <ImageView
         android:id="@+id/customerRegisterProfileImage"
         android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo"
+        android:layout_height="150dp"
+        android:src="@drawable/image_placeholder"
         android:layout_margin="12dp" />
 
     <EditText
@@ -23,8 +23,9 @@
         android:layout_height="50dp"
         android:hint="Name"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/profile"
+        android:background="@drawable/et_design"
         android:paddingStart="16dp"
         tools:ignore="VisualLintTextFieldSize" />
 
@@ -34,8 +35,10 @@
         android:layout_height="50dp"
         android:hint="Address"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/address"
+        android:paddingEnd="16dp"
+        android:background="@drawable/et_design"
         android:paddingStart="16dp"
         tools:ignore="VisualLintTextFieldSize" />
 
@@ -46,8 +49,10 @@
         android:hint="Phone Number"
         android:inputType="number"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/phone"
+        android:paddingEnd="16dp"
+        android:background="@drawable/et_design"
         android:paddingStart="16dp"
         tools:ignore="VisualLintTextFieldSize" />
 
@@ -64,9 +69,9 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
         android:drawableEnd="@drawable/email"
+        android:background="@drawable/et_design"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         tools:ignore="VisualLintTextFieldSize" />
@@ -77,8 +82,10 @@
         android:layout_height="50dp"
         android:hint="Password"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:inputType="textPassword"
+        android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/showpassword"
+        android:background="@drawable/et_design"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         tools:ignore="VisualLintTextFieldSize" />
@@ -88,11 +95,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Confirm Password"
+        android:inputType="textPassword"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
-        android:paddingStart="16dp"
+        android:textColorHint="@color/black"
+        android:drawableEnd="@drawable/showpassword"
         android:paddingEnd="16dp"
+        android:background="@drawable/et_design"
+        android:paddingStart="16dp"
         tools:ignore="VisualLintTextFieldSize" />
 
     <androidx.appcompat.widget.AppCompatButton

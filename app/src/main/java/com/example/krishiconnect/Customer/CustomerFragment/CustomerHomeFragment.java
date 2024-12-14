@@ -73,7 +73,7 @@ public class CustomerHomeFragment extends Fragment {
         sliderImages = new ArrayList<>();
         sliderImages.add(R.drawable.carrot);
         sliderImages.add(R.drawable.broccoli);
-        sliderImages.add(R.drawable.logo);
+        sliderImages.add(R.drawable.cauliflower);
 
         // Set up the ViewPager2 adapter for the slider
         SliderAdapter sliderAdapter = new SliderAdapter(sliderImages);

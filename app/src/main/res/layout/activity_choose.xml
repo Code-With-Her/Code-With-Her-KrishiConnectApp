@@ -6,17 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/secondaryWhite"
     tools:context=".ChooseActivity">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="40dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/farmerBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Farmer"
-        android:background="@drawable/btn_design"
-        android:textColor="@color/white"
+        android:background="@drawable/et_design"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_margin="12dp"/>
 
@@ -25,8 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Customer"
-        android:background="@drawable/btn_design"
-        android:textColor="@color/white"
+        android:background="@drawable/et_design"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_margin="12dp"/>
 
@@ -35,8 +42,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Rider"
-        android:background="@drawable/btn_design"
-        android:textColor="@color/white"
+        android:background="@drawable/et_design"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_margin="12dp"/>
 

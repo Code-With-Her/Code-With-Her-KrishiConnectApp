@@ -33,7 +33,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
         customerLoginEmail = findViewById(R.id.customerLoginEmail);
         customerLoginPassword = findViewById(R.id.customerLoginPassword);
         customerLoginBtn = findViewById(R.id.customerLoginBtn);
-        customerRegisterTxt = findViewById(R.id.customerregisterTxt);
+        customerRegisterTxt = findViewById(R.id.customerRegisterText);
         forgotPass = findViewById(R.id.forgotPass);
         progressBar = findViewById(R.id.progressBar);
 

@@ -69,9 +69,9 @@ public class FarmerHomeFragment extends Fragment {
 
         // Initialize slider images with hardcoded resource IDs
         sliderImages = new ArrayList<>();
-        sliderImages.add(R.drawable.ic_launcher_foreground);
-        sliderImages.add(R.drawable.ic_launcher_background);
-        sliderImages.add(R.drawable.logo);
+        sliderImages.add(R.drawable.cauliflower);
+        sliderImages.add(R.drawable.carrot);
+        sliderImages.add(R.drawable.broccoli);
 
         // Set up the ViewPager2 adapter for the slider
         SliderAdapter sliderAdapter = new SliderAdapter(sliderImages);

@@ -7,8 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/secondaryWhite"
+    android:background="@color/sementicColor"
     tools:context=".Customer.CustomerLoginActivity">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"/>
 
         <EditText
             android:id="@+id/customerLoginEmail"
@@ -16,8 +21,8 @@
             android:layout_height="50dp"
             android:hint="Email"
             android:layout_margin="12dp"
-            android:textColorHint="@color/white"
-            android:background="@drawable/btn_design"
+            android:textColorHint="@color/primaryBlack"
+            android:background="@drawable/et_design"
             android:drawableEnd="@drawable/email"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -30,8 +35,9 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:layout_margin="12dp"
-            android:textColorHint="@color/white"
-            android:background="@drawable/btn_design"
+            android:textColorHint="@color/primaryBlack"
+            android:background="@drawable/et_design"
+            android:drawableEnd="@drawable/showpassword"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             tools:ignore="VisualLintTextFieldSize" />
@@ -67,7 +73,7 @@
                 android:textColor="@color/textColor"/>
 
             <TextView
-                android:id="@+id/customerregisterTxt"
+                android:id="@+id/customerRegisterText"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:text="Register"
@@ -87,22 +93,6 @@
             android:textSize="14sp"
             android:textColor="@color/red"/>
 
-
-        <LinearLayout
-            android:id="@+id/googleLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/logo"
-                android:layout_margin="12dp"/>
-
-
-        </LinearLayout>
 
 
 

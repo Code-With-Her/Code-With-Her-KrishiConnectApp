@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +20,11 @@
         android:theme="@style/Theme.KrishiConnect"
         tools:targetApi="31">
         <activity
+            android:name=".Riders.RiderRegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".Riders.RiderActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".Farmers.FarmerRegisterActivity"
             android:exported="false" />
@@ -45,7 +48,7 @@
             android:exported="true" />
         <activity
             android:name=".Farmers.FarmerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Customer.CustomerActivity"
             android:exported="true" />

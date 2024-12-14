@@ -10,14 +10,21 @@
     android:background="@color/sementicColor"
     tools:context=".Farmers.FarmerLoginActivity">
 
+    <ImageView
+        android:id="@+id/farmerRegisterProfileImage"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_margin="12dp" />
+
     <EditText
         android:id="@+id/farmerLoginEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="Email"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
+        android:background="@drawable/et_design"
         android:drawableEnd="@drawable/email"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -30,8 +37,9 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:layout_margin="12dp"
-        android:textColorHint="@color/white"
-        android:background="@drawable/btn_design"
+        android:textColorHint="@color/black"
+        android:background="@drawable/et_design"
+        android:drawableEnd="@drawable/showpassword"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         tools:ignore="VisualLintTextFieldSize" />

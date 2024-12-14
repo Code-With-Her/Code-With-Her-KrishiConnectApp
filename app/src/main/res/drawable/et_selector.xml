@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused state -->
+    <item android:state_focused="true">
+        <shape>
+            <gradient
+                android:startColor="#E8F5C8" 
+            android:endColor="#D8F0B8" />
+            <corners android:radius="12dp" />
+            <stroke android:width="2dp" android:color="#81B950" /> <!-- Darker green -->
+        </shape>
+    </item>
+
+    <!-- Default state -->
+    <item android:drawable="@drawable/et_design" />
+</selector>

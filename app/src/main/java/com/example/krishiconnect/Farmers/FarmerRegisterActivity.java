@@ -167,7 +167,6 @@ public class FarmerRegisterActivity extends AppCompatActivity {
             if (task.isSuccessful()) {
                 FirebaseUser user = fAuth.getCurrentUser();
                 if (user != null) {
-                    sendEmailVerification(user);
                     String userID = user.getUid();
                     uploadImageToFirebase(userID);
                 }
@@ -177,15 +176,6 @@ public class FarmerRegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void sendEmailVerification(FirebaseUser user) {
-        user.sendEmailVerification().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Toast.makeText(FarmerRegisterActivity.this, "Verification email sent", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(FarmerRegisterActivity.this, "Failed to send verification email", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     private void uploadImageToFirebase(String userID) {
         if (imageUrl != null) {

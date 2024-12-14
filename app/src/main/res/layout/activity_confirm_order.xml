@@ -5,15 +5,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="@color/sementicColor"
     android:padding="16dp">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/getLocationBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="20dp"
-        android:text="Get Location"/>
+        android:text="Get Location"
+        android:background="@color/secondaryWhite"/>
+
 
     <EditText
         android:id="@+id/CustomerName"
@@ -21,6 +24,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter Customer Name"
         android:inputType="text"
+        android:background="@drawable/et_design"
         android:minHeight="48dp"
         android:layout_margin="12dp"/>
 
@@ -29,6 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Customer Phone"
+        android:background="@drawable/et_design"
         android:inputType="phone"
         android:minHeight="48dp"
         android:layout_margin="12dp"/>
@@ -39,9 +44,10 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Place Order"
+        android:textColor="@color/secondaryWhite"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
-        android:background="@color/primaryBlue"/>
+        android:background="@drawable/btn_design"/>
 
 
     <androidx.appcompat.widget.AppCompatButton
@@ -50,9 +56,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:background="@color/primaryGreen"
+        android:background="@drawable/btn_design"
         android:text="Pay Now"
-        android:textColor="@color/primaryBlack"
+        android:textColor="@color/white"
         tools:ignore="TextContrastCheck" />
 
 </LinearLayout>

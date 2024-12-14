@@ -165,8 +165,8 @@
             android:layout_height="70dp"
             android:layout_weight="1"
             android:text="Add To Cart"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/pink" />
+            android:background="@drawable/et_design"
+            android:layout_marginTop="12dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buyNowButton"
@@ -175,7 +175,8 @@
             android:layout_weight="1"
             android:layout_marginTop="18dp"
             android:text="Buy Now"
-            android:backgroundTint="@color/skyBlue" />
+            android:textColor="@color/white"
+            android:background="@color/primaryGreen" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/placeOrder"
@@ -184,6 +185,6 @@
             android:layout_weight="1"
             android:layout_marginTop="18dp"
             android:text="Place Order"
-            android:backgroundTint="@color/skyBlue" />
+            />
     </LinearLayout>
 </LinearLayout>

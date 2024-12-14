@@ -19,12 +19,33 @@
     <color name="sementicColor">#ecf2fe</color>
 
 
-    <color name="textColor">#3C478C</color>
-    <color name="bgColor">#0A5F0F</color>
+    <color name="bgColor">#4f6c11</color>
 
     <color name="pink">#de54ab</color>
     <color name="skyBlue">#0bbbc0</color>
     <color name="miami">#2cbca0</color>
     <color name="red">#e05167</color>
+
+
+    <color name="lightGreen">#F4F9E9</color>
+    <color name="greenHighlight">#81B950</color>
+    <color name="greenBorder">#A3C47C</color>
+    <color name="hintColor">#8C9A6E</color>
+    <color name="textColor">#4D6A33</color>
+    <color name="darkerGreen">#D8F0B8</color>
+    <color name="er">#E8F5C8</color>
+
+
+
+    <color name="light_green">#A8D5BA</color>
+    <color name="standard_green">#4CAF50</color>
+    <color name="forest_green">#228B22</color>
+    <color name="lime_green">#32CD32</color>
+    <color name="mint_green">#98FF98</color>
+    <color name="dark_green">#006400</color>
+    <color name="pastel_green">#77DD77</color>
+    <color name="emerald_green">#50C878</color>
+    <color name="olive_green">#808000</color>
+    <color name="sea_green">#2E8B57</color>
 
 </resources>

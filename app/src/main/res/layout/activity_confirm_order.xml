@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -11,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
         android:text="Get Location"/>
 
     <EditText
@@ -36,8 +38,21 @@
         android:id="@+id/ConfirmOrder"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="Save Order"
+        android:text="Place Order"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         android:background="@color/primaryBlue"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BuyNowButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@color/primaryGreen"
+        android:text="Pay Now"
+        android:textColor="@color/primaryBlack"
+        tools:ignore="TextContrastCheck" />
+
 </LinearLayout>

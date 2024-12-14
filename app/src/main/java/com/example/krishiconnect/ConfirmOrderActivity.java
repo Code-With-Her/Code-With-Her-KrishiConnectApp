@@ -2,13 +2,16 @@ package com.example.krishiconnect;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.krishiconnect.Customer.PaymentActivity;
 import com.example.krishiconnect.Farmers.FarmerActivity;
+import com.example.krishiconnect.Riders.RiderActivity;
 import com.example.krishiconnect.Riders.RiderLoginActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -16,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class ConfirmOrderActivity extends AppCompatActivity {
 
     private EditText customerNameEditText, customerNumberEditText;
-    private Button saveOrderButton, getLocationButton;
+    private Button saveOrderButton, getLocationButton, buyNowButton;
     private double latitude, longitude;
 
     private DatabaseReference ordersRef;
@@ -27,13 +30,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_confirm_order);
 
         // Initialize Firebase reference
-        ordersRef = FirebaseDatabase.getInstance().getReference("CustomerOrderedProducts");
+        ordersRef = FirebaseDatabase.getInstance().getReference("orders");
 
         // Initialize UI components
         customerNameEditText = findViewById(R.id.CustomerName);
         customerNumberEditText = findViewById(R.id.CustomerNumber);
         saveOrderButton = findViewById(R.id.ConfirmOrder);
         getLocationButton = findViewById(R.id.getLocationBtn);
+        buyNowButton = findViewById(R.id.BuyNowButton);
 
         // Retrieve latitude and longitude from the Intent
         Intent intent = getIntent();
@@ -42,6 +46,13 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
         // Set save order button listener
         saveOrderButton.setOnClickListener(v -> saveOrder());
+
+        buyNowButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ConfirmOrderActivity.this, PaymentActivity.class));
+            }
+        });
 
         // Set get location button listener
         getLocationButton.setOnClickListener(v -> {
@@ -71,7 +82,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(this, "Order saved successfully!", Toast.LENGTH_SHORT).show();
                         // Pass orderId to RiderActivity
-                        Intent intent = new Intent(ConfirmOrderActivity.this, FarmerActivity.class);
+                        Intent intent = new Intent(ConfirmOrderActivity.this, RiderActivity.class);
                         intent.putExtra("orderId", orderId);
                         startActivity(intent);
                     })

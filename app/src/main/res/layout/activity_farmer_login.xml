@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/sementicColor"
     tools:context=".Farmers.FarmerLoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/farmerLoginEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Email"
+        android:layout_margin="12dp"
+        android:textColorHint="@color/white"
+        android:background="@drawable/btn_design"
+        android:drawableEnd="@drawable/email"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <EditText
+        android:id="@+id/farmerLoginPassword"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:layout_margin="12dp"
+        android:textColorHint="@color/white"
+        android:background="@drawable/btn_design"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/farmerLoginBtn"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/btn_design"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you a new member?"
+            android:textSize="18sp"
+            android:textColor="@color/primaryBlack"/>
+
+        <TextView
+            android:id="@+id/registerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Register"
+            android:textColor="@color/primaryGreen"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/forgotPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot password"
+        android:textSize="14sp"
+        android:textColor="@color/red"/>
+
+    <LinearLayout
+        android:id="@+id/googleLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/googleg_standard_color_18"
+            android:layout_margin="12dp"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

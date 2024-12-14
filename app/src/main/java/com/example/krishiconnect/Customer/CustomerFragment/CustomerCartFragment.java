@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,7 @@ import java.util.Map;
  */
 public class CustomerCartFragment extends Fragment {
 
+    Button checkOut;
     private RecyclerView cartRecyclerView;
     private MyCartAdapter myCartAdapter;
     private List<MyCartModel> cartList;
@@ -63,6 +65,8 @@ public class CustomerCartFragment extends Fragment {
         myCartAdapter = new MyCartAdapter(getContext(), cartList);
         cartRecyclerView.setAdapter(myCartAdapter);
 
+        checkOut = view.findViewById(R.id.checkOut);
+
         // Initialize Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -70,6 +74,13 @@ public class CustomerCartFragment extends Fragment {
         FirebaseMessaging.getInstance().subscribeToTopic("farmers");
 
         fetchCartData();
+
+        checkOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkout();
+            }
+        });
 
         return view;
     }
@@ -115,6 +126,23 @@ public class CustomerCartFragment extends Fragment {
 
 
 
+    private void checkout() {
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("ProductOrdered");
+
+        for (MyCartModel item : cartList) {
+            DatabaseReference newOrder = orderReference.push();  // Create a unique order ID
+            newOrder.setValue(item).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    notifyFarmer(item);
+                    FirebaseDatabase.getInstance().getReference("Cart").child(userId).removeValue();
+                    Toast.makeText(getContext(), "Order placed successfully!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Failed to place order", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+    }
 
     /**
      * Sends a notification to the farmer about a new order.

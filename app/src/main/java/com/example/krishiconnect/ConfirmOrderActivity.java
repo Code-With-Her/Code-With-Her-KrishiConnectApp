@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.krishiconnect.Farmers.FarmerActivity;
 import com.example.krishiconnect.Riders.RiderLoginActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -70,9 +71,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     .addOnSuccessListener(aVoid -> {
                         Toast.makeText(this, "Order saved successfully!", Toast.LENGTH_SHORT).show();
                         // Pass orderId to RiderActivity
-                        Intent riderIntent = new Intent(ConfirmOrderActivity.this, RiderLoginActivity.class);
-                        riderIntent.putExtra("orderId", orderId);
-                        startActivity(riderIntent);
+                        Intent intent = new Intent(ConfirmOrderActivity.this, FarmerActivity.class);
+                        intent.putExtra("orderId", orderId);
+                        startActivity(intent);
                     })
                     .addOnFailureListener(e -> Toast.makeText(this, "Failed to save order.", Toast.LENGTH_SHORT).show());
         } else {

@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -44,6 +46,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
 
     private String customerName, customerAddress, customerNumber, customerEmail, customerPassword, customerConfirmPassword;
 
+    private String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
         fDatabase = FirebaseDatabase.getInstance();
         dRef = fDatabase.getReference("KrishiCustomers");
         sRef = FirebaseStorage.getInstance().getReference("KrishiCustomerProfileImages");
+        userID = fAuth.getCurrentUser().getUid();
 
         customerRegisterProfileImage.setOnClickListener(v -> openGallery());
 
@@ -168,6 +172,8 @@ public class CustomerRegisterActivity extends AppCompatActivity {
     }
 
     private void saveCustomerDataToDatabase(String userID, String imageUrl) {
+
+
         Map<String, Object> customerData = new HashMap<>();
         customerData.put("Name", customerName);
         customerData.put("Address", customerAddress);
@@ -180,6 +186,7 @@ public class CustomerRegisterActivity extends AppCompatActivity {
         }
 
         dRef.child(userID).setValue(customerData).addOnSuccessListener(unused -> {
+            saveFCMTokenToDatabase(userID);
             Toast.makeText(CustomerRegisterActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
             resetFields();
             startActivity(new Intent(CustomerRegisterActivity.this, CustomerActivity.class));
@@ -214,5 +221,27 @@ public class CustomerRegisterActivity extends AppCompatActivity {
             imageUrl = data.getData();
             customerRegisterProfileImage.setImageURI(imageUrl);
         }
+    }
+
+
+    private void saveFCMTokenToDatabase(String userID) {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        String fcmToken = task.getResult();
+                        if (fcmToken != null) {
+                            // Save the token to the database
+                            dRef.child(userID).child("fcmToken").setValue(fcmToken)
+                                    .addOnSuccessListener(unused -> {
+                                        Toast.makeText(getApplicationContext(), "FCM Token saved successfully", Toast.LENGTH_SHORT).show();
+                                    })
+                                    .addOnFailureListener(e -> {
+                                        Toast.makeText(getApplicationContext(), "Failed to save FCM token: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                    });
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Failed to get FCM token", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

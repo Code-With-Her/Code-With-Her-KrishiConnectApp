@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Customer.CustomerFragment.CartFragment">
+    tools:context=".Customer.CustomerFragment.CustomerCartFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/show_all_cart_toolbar"

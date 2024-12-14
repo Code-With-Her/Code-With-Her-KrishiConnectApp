@@ -6,10 +6,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.krishiconnect.Models.FarmerOrderModel;
 import com.example.krishiconnect.R;
-
 import java.util.List;
 
 public class FarmerOrderAdapter extends RecyclerView.Adapter<FarmerOrderAdapter.OrderViewHolder> {
@@ -37,8 +35,8 @@ public class FarmerOrderAdapter extends RecyclerView.Adapter<FarmerOrderAdapter.
     public void onBindViewHolder(OrderViewHolder holder, int position) {
         FarmerOrderModel order = orderList.get(position);
         holder.productName.setText(order.getProductName());
-        holder.quantity.setText("Quantity: " + order.getQuantity());
-        holder.price.setText("Price: " + order.getPrice());
+        holder.quantity.setText("Quantity: " + order.getTotalQuantity());
+        holder.price.setText("Price: " + order.getTotalPrice());
 
         // Handle accept and reject buttons
         holder.acceptButton.setOnClickListener(v -> listener.onOrderAccept(position));
@@ -64,4 +62,3 @@ public class FarmerOrderAdapter extends RecyclerView.Adapter<FarmerOrderAdapter.
         }
     }
 }
-

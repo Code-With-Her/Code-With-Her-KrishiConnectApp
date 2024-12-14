@@ -1,5 +1,7 @@
 package com.example.krishiconnect.Farmers.FarmerFragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,7 +69,7 @@ public class FarmerOrderFragment extends Fragment {
     }
 
     private void loadOrders() {
-        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("Orders");
+        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("ProductOrdered");
 
         orderReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -89,9 +91,10 @@ public class FarmerOrderFragment extends Fragment {
         });
     }
 
+
     private void acceptOrder(int position) {
         // Update the order status to "Accepted" in the database
-        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("KrishiOrders");
+        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("acceptedOrders");
         String orderId = orderList.get(position).getProductName();  // Use a unique ID or another identifier
         orderReference.child(orderId).child("status").setValue("Accepted");
 
@@ -105,7 +108,7 @@ public class FarmerOrderFragment extends Fragment {
 
     private void rejectOrder(int position) {
         // Update the order status to "Rejected" in the database
-        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("Orders");
+        DatabaseReference orderReference = FirebaseDatabase.getInstance().getReference("rejectedOrders");
         String orderId = orderList.get(position).getProductName();  // Use a unique ID or another identifier
         orderReference.child(orderId).child("status").setValue("Rejected");
 
@@ -117,8 +120,8 @@ public class FarmerOrderFragment extends Fragment {
     private void sendNotification(FarmerOrderModel order, String action) {
         // Assume we have customer and rider FCM tokens saved in the database
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("OurProducts");
-        userRef.child("users").child(userId).child("fcmToken").get().addOnCompleteListener(task -> {
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("KrishiCustomers");
+        userRef.child(userId).child("fcmToken").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 String customerToken = task.getResult().getValue(String.class);
                 if (customerToken != null) {

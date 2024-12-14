@@ -2,18 +2,23 @@ package com.example.krishiconnect.Models;
 
 public class FarmerOrderModel {
     private String productName;
-    private int quantity;
-    private double price;
+    private String currentDate;
+    private String currentTime;
+    private String imageUrl;
+    private int totalPrice;
+    private int totalQuantity;
 
     // Default constructor required for Firebase
     public FarmerOrderModel() {
     }
 
-    // Constructor to initialize the order data
-    public FarmerOrderModel(String productName, int quantity, double price) {
+    public FarmerOrderModel(String productName, String currentDate, String currentTime, String imageUrl, int totalPrice, int totalQuantity) {
         this.productName = productName;
-        this.quantity = quantity;
-        this.price = price;
+        this.currentDate = currentDate;
+        this.currentTime = currentTime;
+        this.imageUrl = imageUrl;
+        this.totalPrice = totalPrice;
+        this.totalQuantity = totalQuantity;
     }
 
     // Getters and Setters
@@ -25,19 +30,43 @@ public class FarmerOrderModel {
         this.productName = productName;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getCurrentDate() {
+        return currentDate;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setCurrentDate(String currentDate) {
+        this.currentDate = currentDate;
     }
 
-    public double getPrice() {
-        return price;
+    public String getCurrentTime() {
+        return currentTime;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public int getTotalQuantity() {
+        return totalQuantity;
+    }
+
+    public void setTotalQuantity(int totalQuantity) {
+        this.totalQuantity = totalQuantity;
     }
 }
